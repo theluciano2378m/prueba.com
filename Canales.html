@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            position: relative;
+        }
+        .search-icon, .close-search-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .search-icon {
+            color: #333;
+        }
+        .close-search-icon {
+            display: none;
+            color: #333;
+        }
+        .title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .search-input {
+            display: none;
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+        .channel-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            padding: 15px;
+            margin: 15px auto;
+            background-color: #5E17EB;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .channel-button:hover {
+            background-color: #4A0FB5;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .channel-button .icon {
+            margin-bottom: 8px;
+            font-size: 22px;
+            transition: transform 0.3s, color 0.3s;
+        }
+        .channel-button:hover .icon {
+            transform: rotate(360deg);
+            color: #ddd;
+        }
+        .channel-subtitle {
+            font-size: 14px;
+            color: #ddd;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .channel-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .fa-instagram {
+            font-size: 14px;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="search-icon" id="searchIcon" onclick="toggleSearch()">
+            <i class="fas fa-search"></i>
+        </span>
+        <span class="close-search-icon" id="closeSearchIcon" onclick="toggleSearch()">
+            <i class="fas fa-times"></i>
+        </span>
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar...">
+        </div>
+        <div class="title" id="title">Canales</div>
+        <a href="No Disponible.html" class="channel-button" data-title="The Chosen">
+            <div class="icon"><i class="fas fa-heart"></i></div>
+            <div class="channel-title">The Chosen</div>
+            <div class="channel-subtitle"><i class="fab fa-instagram"></i>@thechosentvlatino</div>
+        </a>
+        <a href="No Disponible.html" class="channel-button" data-title="Elias Roux DBO">
+            <div class="icon"><i class="fas fa-book"></i></div>
+            <div class="channel-title">Elias Roux DBO</div>
+            <div class="channel-subtitle"><i class="fab fa-instagram"></i>@eliasrouxdbo</div>
+        </a>
+        <a href="No Disponible.html" class="channel-button" data-title="Thiago Montenegro">
+            <div class="icon"><i class="fas fa-fire"></i></div>
+            <div class="channel-title">Thiago Montenegro</div>
+            <div class="channel-subtitle"><i class="fab fa-instagram"></i>@thiagui_monte</div>
+        </a>
+        <a href="No Disponible.html" class="channel-button" data-title="Lautaro Mendoza">
+            <div class="icon"><i class="fas fa-bible"></i></div>
+            <div class="channel-title">Lautaro Mendoza</div>
+            <div class="channel-subtitle"><i class="fab fa-instagram"></i>@lautaro_mendoza2004</div>
+        </a>
+        <a href="No Disponible.html" class="channel-button" data-title="Sendero de Fe">
+            <div class="icon"><i class="fas fa-dove"></i></div>
+            <div class="channel-title">Sendero de Fe</div>
+            <div class="channel-subtitle"><i class="fab fa-instagram"></i>@vitalix.oficial</div>
+        </a>
+    </div>
+    <script>
+        function toggleSearch() {
+            const searchInput = document.getElementById("searchInput");
+            const searchIcon = document.getElementById("searchIcon");
+            const closeSearchIcon = document.getElementById("closeSearchIcon");
+            const title = document.getElementById("title");
+
+            if (searchInput.style.display === "block") {
+                searchInput.style.display = "none";
+                searchIcon.style.display = "block";
+                closeSearchIcon.style.display = "none";
+                title.style.display = "block";
+                filterChannels(""); // Muestra todos los canales cuando se oculta la búsqueda
+            } else {
+                searchInput.style.display = "block";
+                searchIcon.style.display = "none";
+                closeSearchIcon.style.display = "block";
+                title.style.display = "none";
+                searchInput.focus();
+            }
+        }
+
+        document.getElementById("searchInput").addEventListener("input", function() {
+            const query = this.value.toLowerCase();
+            filterChannels(query);
+        });
+
+        function filterChannels(query) {
+            const channels = document.querySelectorAll(".channel-button");
+            channels.forEach(channel => {
+                const title = channel.getAttribute("data-title").toLowerCase();
+                channel.style.display = title.includes(query) ? "flex" : "none";
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opciones de Perfil</title>
+<!-- Agregar Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+/* Estilos CSS */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura visible del dispositivo */
+  background: linear-gradient(135deg, #f0f0f5, #e0e0e5); /* Degradado suave */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Fuente de iPhone */
+}
+
+#back-button {
+  position: absolute; /* Posicionamiento absoluto */
+  top: 18px; /* Ajuste para la distancia desde la parte superior */
+  left: 10px; /* Ajuste para la distancia desde la izquierda */
+  padding: 8px 15px; /* Espacio interno del botón */
+  color: #5E17EB; /* Color azul actualizado */
+  border: none; /* Eliminar borde del botón */
+  border-radius: 10px; /* Borde redondeado */
+  cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+  background-color: #ffffff;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+#profile-options {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  height: 95%; /* Ocupa toda la altura del contenedor */
+  max-width: 390px; /* Ajusta según tus preferencias */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#profile-options h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 24px; /* Tamaño de fuente más pequeño */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
+  color: #333; /* Color gris oscuro */
+  font-family: 'Helvetica Neue', sans-serif; /* Fuente similar a iPhone */
+}
+
+p {
+  color: red;
+}
+
+.option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Alinear elementos al inicio */
+  margin: 10px auto;
+  padding: 15px 20px;
+  background-color: #5E17EB; /* Color de fondo azul actualizado */
+  color: white;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.option-btn i {
+  margin-right: 10px; /* Espacio entre el icono y el texto */
+}
+
+.option-btn:hover {
+  background-color: #4a14b8; /* Color más oscuro al pasar el mouse */
+}
+
+.option-btn:active {
+  transform: scale(0.95);
+}
+</style>
+</head>
+<body>
+<div id="profile-options">
+  <button class="option-btn" onclick="micuenta()"><i class="fa-solid fa-user"></i> Mi Cuenta</button>
+  <button class="option-btn" onclick="Avisos()"><i class="fa-solid fa-bell"></i> Avisos</button>
+  <button class="option-btn" onclick="Redes()"><i class="fa fa-share-alt"></i> Redes Sociales</button>
+  <button class="option-btn" onclick="donar()"><i class="fa-solid fa-donate"></i> Donar</button>
+  <button class="option-btn" onclick="Solicanal()"><i class="fa fa-video"></i> Solicitar Canal</button>
+  <button class="option-btn" onclick="soporte()"><i class="fa-solid fa-headset"></i> Soporte</button>
+  <button class="option-btn" onclick="politica()"><i class="fa-solid fa-shield-alt"></i> Política de Privacidad</button>
+  <button class="option-btn" onclick="TerminosCondiciones()"><i class="fas fa-file-alt"></i> Terminos y Condiciones</button>
+</div>
+
+<script>
+function micuenta() {
+  window.location.href = 'No Disponible.html';
+}
+function Redes() {
+  window.location.href = 'Redes.sociales.html';
+}
+function politica() {
+  window.location.href = 'PoliticaPrivacidad.html';
+}
+function donar() {
+  window.location.href = 'Donar.html';
+}
+function soporte() {
+  window.location.href = 'No Disponible.html';
+}
+function Avisos() {
+  window.location.href = 'No Disponible.html';
+}
+function TerminosCondiciones() {
+  window.location.href = 'Terminos y Condiciones.html';
+}
+function Solicanal() {
+  window.location.href = 'No Disponible.html';
+}
+</script>
+</body>
+</html>
